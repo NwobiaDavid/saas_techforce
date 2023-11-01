@@ -21,7 +21,7 @@ function App() {
       <Nav/>
       <Homepage />
       <Features />
-      {/* <Testimonials /> */}
+      <Testimonials />
     </div>
   )
 }
