@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import logo from '../assets/taskie.png'
+import { Link } from 'react-scroll';
 
-export default function Navbar() {
+export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -12,9 +14,12 @@ export default function Navbar() {
       <div className="p-0 m-0 flex w-[100%] justify-around items-center lg:w-fit">
         {/* Logo and Brand */}
         <div className="w-[40%] md:w-auto flex items-center justify-center">
-          <a className="font-bold p-3 text-2xl md:text-3xl" href="#">
-            <span className="text-blue-500">./</span>studyHive
-          </a>
+          <div className='flex items-center justify-center'>
+            <img src={logo} className='h-[50px]' alt="the website's logo"  />
+            <Link className="font-bold  cursor-pointer text-2xl md:text-3xl" to="homepage">
+              taskie
+            </Link>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -54,36 +59,40 @@ export default function Navbar() {
         } lg:flex-row lg:flex flex-col items-center lg:w-[60%] justify-evenly`}
       >
         <div className="text-lg flex whitespace-nowrap lg:flex-row p-2 items-center flex-col">
-          <a
-            className="p-3  hover:text-blue-600 transition-all duration-300 "
-            href="http://"
+          <Link
+            className="p-3  cursor-pointer hover:text-blue-600 transition-all duration-300 "
+            to="features"
           >
             features
-          </a>
-          <a
-            className="p-3 lg:ml-4 hover:text-blue-600 transition-all duration-300 "
-            href="http://"
+          </Link>
+          <Link
+            className="p-3 cursor-pointer lg:ml-4 hover:text-blue-600 transition-all duration-300 "
+            to="testimonials"
           >
             testimonials
-          </a>
-          <a
-            className="p-3 lg:ml-4 hover:text-blue-600 transition-all duration-300 "
-            href="http://"
+          </Link>
+          <Link
+            className="p-3  cursor-pointer lg:ml-4 hover:text-blue-600 transition-all duration-300 "
+            to="pricing"
           >
             pricing
-          </a>
-        </div>
-        <a
-          className="p-3 lg:ml-4 hover:text-blue-600 transition-all duration-300 "
-          href="http://"
+          </Link>
+          <Link
+          className="p-3  cursor-pointer lg:ml-4 hover:text-blue-600 transition-all duration-300 "
+          to="contact"
         >
           contact
-        </a>
+        </Link>
+        </div>
+      
+
+        <div className="text-lg  cursor-pointer py-3 lg:w-[20%] text-center px-4 lg:mb-0 mb-7 hover:bg-blue-600 duration-200 bg-blue-500 text-white rounded-lg">
+        <Link to="contact">try taskie</Link>
       </div>
 
-      <div className="text-lg p-3 lg:mb-0 mb-7 hover:bg-blue-600 duration-200 bg-blue-500 text-white rounded-lg">
-        <a href="">try taskie</a>
       </div>
+
+    
     </div>
   );
 }
