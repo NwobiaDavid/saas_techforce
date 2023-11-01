@@ -48,7 +48,7 @@ function Plan({ plan }) {
 
 export default function Pricing() {
   return (
-    <div id='pricing' className="lg:px-10 px-5 flex flex-col justify-center items-center py-6">
+    <div id='pricing' data-aos="fade-down" className="lg:px-10 px-5 flex flex-col justify-center items-center py-6">
 
       <div className="px-4 py-14 text-center">
         <h1>Taskie is priced your way</h1>

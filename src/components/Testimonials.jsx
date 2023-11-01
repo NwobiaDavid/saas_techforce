@@ -2,6 +2,8 @@
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import '@splidejs/react-splide/css/core';
+import { useRef, useEffect, useState } from 'react';
+import {motion} from 'framer-motion';
 
 import img from '../assets/testimonial-dummy1.png'
 
@@ -57,14 +59,50 @@ export default function Testimonials() {
     },
   };
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  const featuresRef = useRef(null);
+
+  const featuresVar = {
+    hidden: {
+      opacity: 0,
+      y: '-10vh'
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        delay: 0.3,
+        staggerChildren: 0.4
+      }
+    }
+  };
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (featuresRef.current) {
+        const rect = featuresRef.current.getBoundingClientRect();
+        setIsVisible(rect.top < window.innerHeight - 100);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div id='testimonials' className='overflow-x-hidden '>
+    <div  ref={featuresRef} id='testimonials' className='overflow-x-hidden '>
       <div className='flex p-3 justify-center items-center flex-col'>
         <h1 className='text-xl '>testimonials</h1>
         <p className='text-2xl text-center lg:text-left font-semibold'>check out what people are saying about us</p>
       </div>
       <div className='flex justify-center items-center'>
-        <div className="rounded-2xl w-[90%] lg:w-[70%] justify-center items-center flex bg-purple-200">
+        <motion.div variants={featuresVar} initial="hidden"
+         animate={isVisible ? 'visible' : 'hidden'} className="rounded-2xl w-[90%] lg:w-[70%] justify-center items-center flex bg-purple-200">
           <Splide
             options={{
               rewind: true,
@@ -87,7 +125,7 @@ export default function Testimonials() {
               ))}
             </SplideTrack>
           </Splide>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
