@@ -10,7 +10,8 @@ export default function Nav() {
   };
 
   return (
-    <div className="flex lg:flex-row flex-col p-2 my-0 items-center justify-center md:justify-evenly shadow-md">
+    <div className="flex bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0
+    fixed w-screen z-50 lg:flex-row flex-col p-2 my-0 items-center justify-center md:justify-evenly shadow-md">
       <div className="p-0 m-0 flex w-[100%] justify-around items-center lg:w-fit">
         {/* Logo and Brand */}
         <div className="w-[40%] md:w-auto flex items-center justify-center">

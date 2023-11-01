@@ -1,3 +1,6 @@
+import { useRef, useEffect, useState } from 'react';
+import {motion} from 'framer-motion'
+
 import img1 from '../assets/features/icon-content-folder_2x.png'
 import img2 from '../assets/features/icon-object-book_2x.png'
 import img3 from '../assets/features/icon-object-leaf_2x.png'
@@ -13,22 +16,69 @@ export default function Features() {
         {id: 6, header: 'Customizable Workflows:',img: img1, desc: "Tailor Taskie to your unique workflow. Customize task statuses, labels, and priorities. Adapt Taskie to match your team's specific needs and enhance productivity."}
     ];
 
+    const [isVisible, setIsVisible] = useState(false);
+
+    const featuresRef = useRef(null);
+  
+    const featuresVar = {
+      hidden: {
+        opacity: 0,
+        y: '-10vh'
+      },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          delay: 0.3,
+          staggerChildren: 0.4
+        }
+      }
+    };
+  
+    const childrenVar = {
+      hidden: {
+        opacity: 0,
+        y: '-10vh'
+      },
+      visible: {
+        opacity: 1,
+        y: 0
+      }
+    };
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (featuresRef.current) {
+          const rect = featuresRef.current.getBoundingClientRect();
+          setIsVisible(rect.top < window.innerHeight - 100);
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+
   return (
-    <div className='flex py-10 justify-center flex-col items-center'>
+    <div id='features' ref={featuresRef} className='flex py-10 justify-center flex-col items-center'>
       <div className='w-[50%] p-3'>
         <p className='text-lg'>what taskie can do</p>
         <h1 className='text-2xl '>Discover the Power of Effortless Task Management</h1>
       </div>
-      <div className='grid gap-5 justify-center items-center grid-cols-3'>
+      <motion.div  variants={featuresVar}
+        initial="hidden"
+         animate={isVisible ? 'visible' : 'hidden'} className='grid gap-5 justify-center items-center grid-cols-3'>
                    {features.map(item => (
-                    <div className='p-3 rounded-lg flex flex-col justify-center items-center h-[250px] w-[300px] bg-[#FBF0B2] ' key={item.id}>
+                    <motion.div  whileHover={{scale: 1.05}} variants={childrenVar} className='p-3 cursor-pointer rounded-lg flex flex-col justify-center items-center h-[250px] w-[300px] bg-[#FBF0B2] ' key={item.id}>
                     <div className='flex justify-start w-full px-2 mb-2 py-1 bg-white rounded-xl '><img className='h-[50px] ' src={item.img} alt="" /></div>
                         <h1 className='text-xl pt-2 pb-1 font-semibold '>{item.header}</h1>
                         <p>{item.desc}</p>
-                    </div>
+                    </motion.div>
                 ))}
 
-      </div>
+      </motion.div>
     </div>
   )
 }
