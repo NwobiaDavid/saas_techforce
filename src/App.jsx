@@ -6,7 +6,7 @@ import Nav from './components/Nav'
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Features from './components/Testimonials';
+import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 
 function App() {
@@ -17,10 +17,11 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className='font-poppins'>
       <Nav/>
       <Homepage />
-      <Testimonials />
+      <Features />
+      {/* <Testimonials /> */}
     </div>
   )
 }
