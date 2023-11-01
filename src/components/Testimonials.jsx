@@ -79,9 +79,9 @@ export default function Testimonials() {
             hasTrack={false}
             aria-label="Testimonials"
           >
-            <SplideTrack className='w-screen' data-splide-track>
+            <SplideTrack className='w-screen lg:w-full' data-splide-track>
               {testimonials.map((testimonial) => (
-                <SplideSlide className='w-screen' key={testimonial.id}>
+                <SplideSlide className='w-screen lg:w-full' key={testimonial.id}>
                   <Testimonial testimonial={testimonial} />
                 </SplideSlide>
               ))}
