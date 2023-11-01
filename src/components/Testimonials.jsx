@@ -58,7 +58,7 @@ export default function Testimonials() {
   };
 
   return (
-    <div id='testimonials'>
+    <div id='testimonials' className='overflow-x-hidden '>
       <div className='flex p-3 justify-center items-center flex-col'>
         <h1 className='text-xl '>testimonials</h1>
         <p className='text-2xl text-center lg:text-left font-semibold'>check out what people are saying about us</p>
