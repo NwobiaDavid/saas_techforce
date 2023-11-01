@@ -31,24 +31,24 @@ const plans = [
 
 function Plan({ plan }) {
   return (
-    <div className="rounded-xl flex flex-col justify-between p-3 h-[400px] lg:h-[600px] border-2 border-blue-300">
+    <div className="rounded-xl hover:shadow-blue-300 duration-200 shadow-md flex flex-col justify-between p-3 h-[400px] lg:h-[500px] border-2 border-blue-300">
       <div>
-        <h1 className='text-xl py-3 font-semibold'>{plan.tier}</h1>
-        <h1 className="flex mb-2 text-lg items-center">
+        <h1 className='lg:text-2xl text-xl py-3 font-semibold'>{plan.tier}</h1>
+        <h1 className="flex lg:text-xl mb-2 text-lg items-center">
           {' '}
           <FaNairaSign size={18} /> {plan.price}
         </h1>
         <h1 className='text-sm opacity-70 '>{plan.desc}</h1>
         <h1 className='py-3 text-lg '>{plan.explain}</h1>
       </div>
-      <div><button className="border rounded-xl px-4 mb-8 py-3">{plan.btnText}</button></div>
+      <div><button className="border hover:bg-blue-500 hover:text-white duration-200 rounded-xl px-4 mb-8 py-3">{plan.btnText}</button></div>
     </div>
   );
 }
 
 export default function Pricing() {
   return (
-    <div className="lg:px-10 px-5 flex flex-col justify-center items-center py-6">
+    <div id='pricing' className="lg:px-10 px-5 flex flex-col justify-center items-center py-6">
 
       <div className="px-4 py-14 text-center">
         <h1>Taskie is priced your way</h1>

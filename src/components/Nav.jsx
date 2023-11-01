@@ -17,7 +17,7 @@ export default function Nav() {
         <div className="w-[40%] md:w-auto flex items-center justify-center">
           <div className='flex items-center justify-center'>
             <img src={logo} className='h-[50px]' alt="the website's logo"  />
-            <Link className="font-bold  cursor-pointer text-2xl md:text-3xl" to="homepage">
+            <Link spy={true} smooth={true} offset={-70} duration={300} className="font-bold  cursor-pointer text-2xl md:text-3xl" to="homepage">
               taskie
             </Link>
           </div>
@@ -63,24 +63,28 @@ export default function Nav() {
           <Link
             className="p-3  cursor-pointer hover:text-blue-600 transition-all duration-300 "
             to="features"
+            spy={true} smooth={true} offset={-70} duration={300}
           >
             features
           </Link>
           <Link
             className="p-3 cursor-pointer lg:ml-4 hover:text-blue-600 transition-all duration-300 "
             to="testimonials"
+            spy={true} smooth={true} offset={-70} duration={300}
           >
             testimonials
           </Link>
           <Link
             className="p-3  cursor-pointer lg:ml-4 hover:text-blue-600 transition-all duration-300 "
             to="pricing"
+            spy={true} smooth={true} offset={-70} duration={300}
           >
             pricing
           </Link>
           <Link
           className="p-3  cursor-pointer lg:ml-4 hover:text-blue-600 transition-all duration-300 "
           to="contact"
+          spy={true} smooth={true} offset={-70} duration={300}
         >
           contact
         </Link>
@@ -88,7 +92,7 @@ export default function Nav() {
       
 
         <div className="text-lg  cursor-pointer py-3 lg:w-[20%] text-center px-4 lg:mb-0 mb-7 hover:bg-blue-600 duration-200 bg-blue-500 text-white rounded-lg">
-        <Link to="contact">try taskie</Link>
+        <Link spy={true} smooth={true} offset={-70} duration={300} to="contact">try taskie</Link>
       </div>
 
       </div>

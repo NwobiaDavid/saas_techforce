@@ -2,9 +2,9 @@ import { useRef, useEffect, useState } from 'react';
 import {motion} from 'framer-motion'
 
 import img1 from '../assets/features/icon-content-folder_2x.png'
-import img2 from '../assets/features/icon-object-book_2x.png'
-import img3 from '../assets/features/icon-object-leaf_2x.png'
-import img4 from '../assets/features/icon-object-megaphone_2x.png'
+// import img2 from '../assets/features/icon-object-book_2x.png'
+// import img3 from '../assets/features/icon-object-leaf_2x.png'
+// import img4 from '../assets/features/icon-object-megaphone_2x.png'
 
 export default function Features() {
     const features = [
