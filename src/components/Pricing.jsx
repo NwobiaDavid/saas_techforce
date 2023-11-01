@@ -55,7 +55,7 @@ export default function Pricing() {
         <p className="font-semibold text-2xl ">
           Trusted by millions, Taskie backed teams all around the world.
         </p>
-        <button className="py-3 px-4 bg-yellow-400 rounded-xl">
+        <button className="py-3  mt-2 lg:mt-0 px-4 bg-yellow-400 rounded-xl">
           compare plans
         </button>
       </div>
