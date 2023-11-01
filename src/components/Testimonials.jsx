@@ -29,23 +29,25 @@ const testimonials = [
 
 function Testimonial({ testimonial }) {
   return (
-    <div className="w-full flex justify-center items-center flex-col h-full">
-    <img className='h-[50px] ' src={img} alt="" />
-      <h2>{testimonial.name}</h2>
-      <p>{testimonial.quote}</p>
+    <div className="lg:w-full w-[80%] flex justify-center items-center flex-col h-full">
+      <img className='h-[50px] ' src={img} alt="dummy image" />
+      <h2 className='text-lg font-semibold '>{testimonial.name}</h2>
+      <p className='text-base '>{testimonial.quote}</p>
     </div>
   );
 }
 
 export default function Testimonials() {
+
+  
   return (
-    <div>
+    <div id='testimonials'>
       <div className='flex p-3 justify-center items-center flex-col'>
         <h1 className='text-xl '>testimonials</h1>
-        <p className='text-2xl font-semibold'>check out what people are saying about us</p>
+        <p className='text-2xl text-center lg:text-left font-semibold'>check out what people are saying about us</p>
       </div>
       <div className='flex  justify-center items-center'>
-        <div className=" rounded-2xl w-[70%] justify-center items-center flex bg-purple-200">
+        <div className=" rounded-2xl w-[90%] lg:w-[70%] justify-center items-center flex bg-purple-200">
           <Splide
             options={{
               rewind: true,

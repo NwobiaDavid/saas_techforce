@@ -63,15 +63,15 @@ export default function Features() {
 
   return (
     <div id='features' ref={featuresRef} className='flex py-10 justify-center flex-col items-center'>
-      <div className='w-[50%] p-3'>
+      <div className='lg:w-[50%] w-full text-center p-3'>
         <p className='text-lg'>what taskie can do</p>
-        <h1 className='text-2xl '>Discover the Power of Effortless Task Management</h1>
+        <h1 className='text-2xl font-semibold '>Discover the Power of Effortless Task Management</h1>
       </div>
       <motion.div  variants={featuresVar}
         initial="hidden"
-         animate={isVisible ? 'visible' : 'hidden'} className='grid gap-5 justify-center items-center grid-cols-3'>
+         animate={isVisible ? 'visible' : 'hidden'} className='grid gap-5 justify-center items-center grid-cols-1 lg:grid-cols-3'>
                    {features.map(item => (
-                    <motion.div  whileHover={{scale: 1.05}} variants={childrenVar} className='p-3 cursor-pointer rounded-lg flex flex-col justify-center items-center h-[250px] w-[300px] bg-[#FBF0B2] ' key={item.id}>
+                    <motion.div whileHover={{scale: 1.05}} variants={childrenVar} className='p-3 cursor-pointer rounded-lg flex flex-col justify-center items-center h-[250px] w-[300px] bg-[#FBF0B2] ' key={item.id}>
                     <div className='flex justify-start w-full px-2 mb-2 py-1 bg-white rounded-xl '><img className='h-[50px] ' src={item.img} alt="" /></div>
                         <h1 className='text-xl pt-2 pb-1 font-semibold '>{item.header}</h1>
                         <p>{item.desc}</p>
