@@ -8,6 +8,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Features from './components/Features';
 import Testimonials from './components/Testimonials';
+import Pricing from './components/Pricing';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
       <Homepage />
       <Features />
       <Testimonials />
+      <Pricing />
     </div>
   )
 }
